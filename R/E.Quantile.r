@@ -1,41 +1,78 @@
 #' @export
+#'
+#' @title
+#' Estimation of Population Quantiles
+#' @description
+#' Computes a weighted quantile estimator for finite populations. When
+#' inclusion probabilities are provided, the estimator uses the
+#' Horvitz-Thompson weights \eqn{d_k = 1/\pi_k}; otherwise, equal weights
+#' are assumed (simple random sampling).
+#' @return
+#' A numeric vector of length equal to the number of variables in \code{y},
+#' containing the estimated quantile for each variable.
+#' @details
+#' The estimator is based on the weighted empirical cumulative distribution
+#' function. For each variable, units are sorted by their observed value,
+#' cumulative weights are computed, and the quantile is located by
+#' interpolation.
+#' @author Hugo Andres Gutierrez Rojas <hagutierrezro at gmail.com>
+#' @param y Vector, matrix or data frame containing the values of the
+#'   variables of interest for every unit in the selected sample.
+#' @param Qn Scalar in \eqn{(0, 1)}. The desired quantile level
+#'   (e.g. \code{0.5} for the median, \code{0.25} for the first quartile).
+#' @param Pik Optional vector of first-order inclusion probabilities. If
+#'   omitted, equal probabilities are assumed.
+#'
+#' @references
+#' Sarndal, C-E. and Swensson, B. and Wretman, J. (1992),
+#' \emph{Model Assisted Survey Sampling}. Springer.\cr
+#' Gutierrez, H. A. (2009), \emph{Estrategias de muestreo: Diseno de encuestas
+#' y estimacion de parametros}. Editorial Universidad Santo Tomas.
+#'
+#' @seealso \code{\link{E.SI}}, \code{\link{E.piPS}}
+#'
+#' @examples
+#' data('Lucy')
+#' attach(Lucy)
+#' N   <- nrow(Lucy)
+#' n   <- 400
+#' sam <- S.SI(N, n)
+#' Pik <- rep(n/N, n)
+#' y   <- data.frame(Income = Income[sam], Expenditure = Expenditure[sam])
+#'
+#' # Median
+#' E.Quantile(y, Qn = 0.5, Pik = Pik)
+#' # First quartile
+#' E.Quantile(y, Qn = 0.25, Pik = Pik)
 
 E.Quantile <- function(y, Qn, Pik) {
-y<-as.data.frame(y)
-Total<-rep(NA,dim(y)[2])
-
+  y <- as.data.frame(y)
+  Total <- rep(NA, dim(y)[2])
   if (missing(Pik))
-  Pik <- rep(1, dim(y)[1])
+    Pik <- rep(1, dim(y)[1])
   if (any(Pik < 0))
-  stop("Probabilities must be positive.")
-
-w <- 1/Pik
-n <- length(w)
-
-for(i in 1:dim(y)[2]){
-
-ord <- order(y[,i])
-x <- y[ord,i]
-w <- w[ord]
-wcum <- cumsum(w)
-wsum <- wcum[n]
-wper <- wsum*Qn
-lows <- (wcum <= wper)
-k <- sum(lows)
-  if (k!=0 && k!=n){
-      wlow <- wcum[k]
+    stop("Probabilities must be positive.")
+  w <- 1/Pik
+  n <- length(w)
+  for (i in 1:dim(y)[2]) {
+    ord  <- order(y[, i])
+    x    <- y[ord, i]
+    w    <- (1/Pik)[ord]
+    wcum <- cumsum(w)
+    wsum <- wcum[n]
+    wper <- wsum * Qn
+    lows <- (wcum <= wper)
+    k    <- sum(lows)
+    if (k != 0 && k != n) {
+      wlow  <- wcum[k]
       whigh <- wsum - wlow
-          if (whigh > wper)
-          Total[i]<-x[k+1]
-          else
-          Total[i]<-(wlow*x[k] + whigh*x[k+1]) / wsum
+      if (whigh > wper)
+        Total[i] <- x[k + 1]
+      else
+        Total[i] <- (wlow * x[k] + whigh * x[k + 1])/wsum
+    }
+    if (k == 0) Total[i] <- x[1]
+    if (k == n) Total[i] <- x[n]
   }
-  if (k == 0) {
-      Total[i] <- x[1]
-  }
-  if (k == n) {
-      Total[i] <- x[n]
-  }
-}
-return(Total)
+  return(Total)
 }
