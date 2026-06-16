@@ -28,12 +28,12 @@ this function will be very slow. It is intended primarily for theoretical
 illustrations and teaching purposes.
 }
 \examples{
-# All possible samples of size n = 2 from N = 4 units
-N <- 4
+U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+N <- length(U)
 n <- 2
+# The sample membership matrix
 Ik(N, n)
-# Number of rows equals choose(N, n) = 6
-nrow(Ik(N, n)) == choose(N, n)
+# The first unit, Yves, belongs to the first four possible samples
 }
 \references{
 Sarndal, C-E. and Swensson, B. and Wretman, J. (1992),

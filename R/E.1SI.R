@@ -62,7 +62,7 @@ E.1SI <- function(NI, nI, y, PSU) {
   
   Total <- matrix(NA, nrow = 4, ncol = dim(y)[2])
   rownames(Total) = c("Estimation", "Standard Error", "CVE", 
-    "DEFF")
+                      "DEFF")
   colnames(Total) <- names(y)
   
   fI <- nI/NI
@@ -80,5 +80,3 @@ E.1SI <- function(NI, nI, y, PSU) {
   }
   return(Total)
 }
-
-

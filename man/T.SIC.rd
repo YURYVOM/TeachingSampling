@@ -29,18 +29,34 @@ The output can be passed directly to \code{\link{E.1SI}} or \code{\link{E.SI}}
 treating each cluster total as an observation.
 }
 \examples{
-library(dplyr)
-data('BigCity')
-UI  <- levels(as.factor(BigCity$PSU))
-NI  <- length(UI)
-nI  <- 10
-sam <- S.SI(NI, nI)
-sampleI  <- UI[sam[sam != 0]]
-CityI    <- BigCity[BigCity$PSU \%in\% sampleI, ]
-y        <- data.frame(Income = CityI$Income,
-                       Expenditure = CityI$Expenditure)
-cluster  <- CityI$PSU
-T.SIC(y, cluster)
+############
+## Example 1
+############
+U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+y1 <- c(32, 34, 46, 89, 35)
+y2 <- c(1, 1, 1, 0, 0)
+y3 <- cbind(y1, y2)
+Cluster <- c("C1", "C2", "C1", "C2", "C1")
+T.SIC(y1, Cluster)
+T.SIC(y3, Cluster)
+############
+## Example 2 - Cluster sampling with Lucy data
+############
+data(Lucy)
+attach(Lucy)
+UI <- c("A", "B", "C", "D", "E")
+NI <- length(UI)
+nI <- 2
+samI <- S.SI(NI, nI)
+dataI <- UI[samI]
+Lucy1 <- Lucy[which(Zone == dataI[1]), ]
+Lucy2 <- Lucy[which(Zone == dataI[2]), ]
+LucyI <- rbind(Lucy1, Lucy2)
+attach(LucyI)
+Cluster <- as.factor(as.integer(Zone))
+estima <- data.frame(Income, Employees, Taxes)
+Ty <- T.SIC(estima, Cluster)
+E.SI(NI, nI, Ty)
 }
 \references{
 Sarndal, C-E. and Swensson, B. and Wretman, J. (1992),

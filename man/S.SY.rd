@@ -28,13 +28,34 @@ multiple of \code{a}, the sample size varies by one unit depending on the
 random start. Use \code{\link{E.SY}} to estimate population totals.
 }
 \examples{
-data('Lucy')
+############
+## Example 1
+############
+# Vector U contains the label of a population of size N=5
+U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+# The population of size N=5 is divided in a=2 groups
+# Draws a Systematic sample. 
+sam <- S.SY(5,2)
+sam
+# The selected sample is
+U[sam]
+# There are only two possible samples
+
+############
+## Example 2
+############
+# Uses the Lucy data to draw a Systematic sample
+data(Lucy)
 attach(Lucy)
-N   <- nrow(Lucy)
-a   <- 10
-sam <- S.SY(N, a)
-y   <- data.frame(Income = Income[sam], Expenditure = Expenditure[sam])
-E.SY(N, a, y)
+
+N <- dim(Lucy)[1]
+# The population is divided in 6 groups
+# The selected sample
+sam <- S.SY(N,6)
+# The information about the units in the sample is stored in an object called data
+data <- Lucy[sam,]
+data
+dim(data)
 }
 \references{
 Sarndal, C-E. and Swensson, B. and Wretman, J. (1992),

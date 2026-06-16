@@ -36,13 +36,36 @@
 #' @seealso \code{\link{PikPPS}}, \code{\link{PikSTPPS}}
 #'
 #' @examples
-#' data('Lucy')
+#' ############
+#' ## Example 1
+#' ############
+#' data(Lucy)
 #' attach(Lucy)
-#' # Two surveys with different auxiliary variables
-#' sigma <- cbind(Employees, Income)
-#' n     <- c(100, 150)
-#' pik   <- PikHol(n, sigma, e = 0.1)
-#' sum(pik <= 1)  # all valid probabilities
+#' N <- dim(Lucy)[1]
+#' n <- c(350, 400)
+#' sigy1 <- sqrt(Income^(1))
+#' sigy2 <- sqrt(Income^(2))
+#' sigma <- cbind(sigy1, sigy2)
+#' Piks <- PikHol(n, sigma, 0.03)
+#' n.opt <- round(sum(Piks))
+#' res <- S.piPS(n.opt, Piks)
+#' sam <- res[, 1]
+#' Pik.s <- res[, 2]
+#' estima <- data.frame(Lucy$Income[sam], Lucy$Employees[sam])
+#' E.piPS(estima, Pik.s)
+#' ############
+#' ## Example 2 - with custom inclusion probabilities
+#' ############
+#' data(Lucy)
+#' attach(Lucy)
+#' N <- dim(Lucy)[1]
+#' n <- c(350, 400)
+#' sigy1 <- sqrt(Income^(1))
+#' sigy2 <- sqrt(Income^(2))
+#' sigma <- cbind(sigy1, sigy2)
+#' pikas <- cbind(rep(400/N, N), rep(400/N, N))
+#' Piks <- PikHol(n, sigma, 0.03, pikas)
+#' round(sum(Piks))
 
 PikHol <- function(n, sigma, e, Pi = NULL) {
   N <- dim(sigma)[1]

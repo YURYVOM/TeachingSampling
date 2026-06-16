@@ -28,9 +28,12 @@
 #' @seealso \code{\link{Support}}, \code{\link{IkRS}}
 #'
 #' @examples
-#' # Complete support for N = 3
-#' SupportRS(3)
-#' # 2^3 = 8 rows
+#' U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+#' N <- length(U)
+#' # Complete support for all sample sizes
+#' SupportRS(N)
+#' # Labeled support
+#' SupportRS(N, ID = U)
 
 SupportRS <- function(N, ID = FALSE) {
   sam <- matrix(NA, ncol = N, nrow = 1)

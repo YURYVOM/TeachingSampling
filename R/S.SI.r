@@ -32,14 +32,30 @@
 #' @seealso \code{\link{E.SI}}, \code{\link{S.STSI}}, \code{\link{S.SY}}
 #'
 #' @examples
-#' data('Lucy')
+#' ############
+#' ## Example 1
+#' ############
+#' # Vector U contains the label of a population of size N=5
+#' U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+#' # Fixes the random numbers in order to select a sample
+#' e <- c(0.4938, 0.7044, 0.4585, 0.6747, 0.0640)
+#' # Draws a simple random sample without replacement of size n=3
+#' sam <- S.SI(5, 3, e)
+#' sam
+#' # The selected sample is
+#' U[sam]
+#' ############
+#' ## Example 2
+#' ############
+#' # Uses the Lucy data to draw a random sample according to a SI design
+#' data(Lucy)
 #' attach(Lucy)
-#' N   <- nrow(Lucy)
-#' n   <- 400
+#' N <- dim(Lucy)[1]
+#' n <- 400
 #' sam <- S.SI(N, n)
-#' sam <- sam[sam != 0]
-#' y   <- data.frame(Income = Income[sam], Expenditure = Expenditure[sam])
-#' E.SI(N, n, y)
+#' # The information about the units in the sample
+#' data <- Lucy[sam, ]
+#' dim(data)
 
 S.SI <- function(N, n, e = runif(N)) {
   c   <- matrix(0, N, 1)

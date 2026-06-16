@@ -31,12 +31,16 @@ It is intended for small populations only. For \code{N > 15} it becomes
 very slow.
 }
 \examples{
-# All samples of size 2 from a population of 5
 U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
-Support(N = 5, n = 2, ID = U)
-
-# Integer indices only
-Support(N = 5, n = 2)
+N <- length(U)
+n <- 2
+# Ten possible samples of size n=2
+Support(N, n)
+# Labeled support
+Support(N, n, ID = U)
+# Support showing values of y
+y <- c(32, 34, 46, 89, 35)
+Support(N, n, ID = y)
 }
 \references{
 Sarndal, C-E. and Swensson, B. and Wretman, J. (1992),

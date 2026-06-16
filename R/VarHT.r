@@ -34,11 +34,15 @@
 #' @seealso \code{\link{Deltakl}}, \code{\link{VarSYGHT}}, \code{\link{HT}}
 #'
 #' @examples
-#' N <- 5
+#' U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+#' y1 <- c(32, 34, 46, 89, 35)
+#' y2 <- c(1, 1, 1, 0, 0)
+#' N <- length(U)
 #' n <- 2
-#' y <- c(32, 34, 46, 89, 35)
 #' p <- c(0.13, 0.2, 0.15, 0.1, 0.15, 0.04, 0.02, 0.06, 0.07, 0.08)
-#' VarHT(y, N, n, p)
+#' # Theoretical variance of the HT estimator
+#' VarHT(y1, N, n, p)
+#' VarHT(y2, N, n, p)
 
 VarHT <- function(y, N, n, p) {
   Ind      <- Ik(N, n)

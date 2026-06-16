@@ -28,9 +28,10 @@
 #' @seealso \code{\link{IkWR}}, \code{\link{SupportWR}}, \code{\link{p.WR}}
 #'
 #' @examples
-#' # Frequency matrix: N = 3 units, m = 2 draws
-#' N <- 3
+#' U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+#' N <- length(U)
 #' m <- 2
+#' # Frequency matrix for with-replacement sampling
 #' nk(N, m)
 
 nk <- function(N, m) {

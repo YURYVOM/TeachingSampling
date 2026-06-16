@@ -28,12 +28,12 @@
 #' @seealso \code{\link{Pik}}, \code{\link{Pikl}}, \code{\link{Support}}
 #'
 #' @examples
-#' # All possible samples of size n = 2 from N = 4 units
-#' N <- 4
+#' U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+#' N <- length(U)
 #' n <- 2
+#' # The sample membership matrix
 #' Ik(N, n)
-#' # Number of rows equals choose(N, n) = 6
-#' nrow(Ik(N, n)) == choose(N, n)
+#' # The first unit, Yves, belongs to the first four possible samples
 
 Ik <- function(N, n) {
   Q <- Support(N, n, ID = FALSE)

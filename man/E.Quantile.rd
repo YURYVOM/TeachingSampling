@@ -33,18 +33,32 @@ cumulative weights are computed, and the quantile is located by
 interpolation.
 }
 \examples{
-data('Lucy')
+############
+## Example 1
+############
+U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+y <- c(32, 34, 46, 89, 35)
+x <- c(52, 60, 75, 100, 50)
+z <- cbind(y, x)
+Pik <- c(0.58, 0.34, 0.48, 0.33, 0.27)
+E.Quantile(y, 0.5)
+E.Quantile(x, 0.25)
+E.Quantile(z, 0.75)
+E.Quantile(z, 0.5, Pik)
+############
+## Example 2
+############
+data(Lucy)
 attach(Lucy)
-N   <- nrow(Lucy)
-n   <- 400
-sam <- S.SI(N, n)
-Pik <- rep(n/N, n)
-y   <- data.frame(Income = Income[sam], Expenditure = Expenditure[sam])
-
-# Median
-E.Quantile(y, Qn = 0.5, Pik = Pik)
-# First quartile
-E.Quantile(y, Qn = 0.25, Pik = Pik)
+m <- 400
+res <- S.PPS(m, Income)
+sam <- res[, 1]
+pk.s <- res[, 2]
+Pik.s <- 1 - (1 - pk.s)^m
+data <- Lucy[sam, ]
+attach(data)
+estima <- data.frame(Income, Employees, Taxes)
+E.Quantile(estima, 0.5, Pik.s)
 }
 \references{
 Sarndal, C-E. and Swensson, B. and Wretman, J. (1992),

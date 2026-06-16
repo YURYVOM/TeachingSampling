@@ -28,9 +28,12 @@ sizes \eqn{n = 1, \ldots, N}. It is only feasible for small populations
 (\code{N <= 10}) due to exponential growth.
 }
 \examples{
-# Complete support for N = 3
-SupportRS(3)
-# 2^3 = 8 rows
+U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+N <- length(U)
+# Complete support for all sample sizes
+SupportRS(N)
+# Labeled support
+SupportRS(N, ID = U)
 }
 \references{
 Sarndal, C-E. and Swensson, B. and Wretman, J. (1992),

@@ -33,12 +33,13 @@ estimator. This function enumerates the full sampling support via
 (\code{N <= 15}).
 }
 \examples{
-# Population N = 5, sample size n = 2
-N <- 5
+U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+N <- length(U)
 n <- 2
 p <- c(0.13, 0.2, 0.15, 0.1, 0.15, 0.04, 0.02, 0.06, 0.07, 0.08)
-pi2 <- Pikl(N, n, p)
-pi2
+sum(p)
+# Second-order inclusion probabilities
+Pikl(N, n, p)
 }
 \references{
 Sarndal, C-E. and Swensson, B. and Wretman, J. (1992),

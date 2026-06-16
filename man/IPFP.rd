@@ -36,11 +36,35 @@ Convergence is assessed by the sum of absolute differences between
 known and estimated marginals.
 }
 \examples{
-# A 2x2 table to be raked to known marginals
-Table   <- matrix(c(10, 20, 30, 40), nrow = 2)
-Row.knw <- c(40, 60)
-Col.knw <- c(35, 65)
-IPFP(Table, Col.knw, Row.knw)
+############
+## Example 1
+############
+Table <- matrix(c(80, 90, 10, 170, 80, 80, 150, 210, 130), 3, 3)
+rownames(Table) <- c("a1", "a2", "a3")
+colnames(Table) <- c("b1", "b2", "b3")
+Col.knw <- c(150, 300, 550)
+Row.knw <- c(430, 360, 210)
+IPFP(Table, Col.knw, Row.knw, tol = 0.0001)
+############
+## Example 2
+############
+data(Lucy)
+attach(Lucy)
+N <- dim(Lucy)[1]
+n <- 400
+sam <- sample(N, n)
+data <- Lucy[sam, ]
+attach(data)
+Doma1 <- Domains(Level)
+Doma2 <- Domains(SPAM)
+SPAM.no  <- Doma2[, 1] * Doma1
+SPAM.yes <- Doma2[, 2] * Doma1
+est1 <- E.SI(N, n, SPAM.no)[, 2:4]
+est2 <- E.SI(N, n, SPAM.yes)[, 2:4]
+Table <- cbind(est1[1, ], est2[1, ])
+Col.knw <- colSums(Domains(Lucy$SPAM))
+Row.knw <- colSums(Domains(Lucy$Level))
+IPFP(Table, Col.knw, Row.knw, tol = 0.0001)
 }
 \references{
 Deming, W.E. and Stephan, F.F. (1940). On a least squares adjustment of

@@ -30,14 +30,35 @@
 #' @seealso \code{\link{E.PPS}}, \code{\link{HH}}, \code{\link{S.piPS}}
 #'
 #' @examples
-#' data('Lucy')
+#' ############
+#' ## Example 1
+#' ############
+#' # Vector U contains the label of a population of size N=5
+#' U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+#' # The auxiliary information
+#' x <- c(52, 60, 75, 100, 50)
+#' # Draws a PPS sample with replacement of size m=3
+#' res <- S.PPS(3,x)
+#' sam <- res[,1]
+#' # The selected sample is
+#' U[sam]
+#'
+#' ############
+#' ## Example 2
+#' ############
+#' # Uses the Lucy data to draw a random sample according to a 
+#' # PPS with replacement design
+#' data(Lucy)
 #' attach(Lucy)
-#' m   <- 400
-#' res <- S.PPS(m, Employees)
-#' sam <- res[, 1]
-#' pk  <- res[, 2]
-#' y   <- data.frame(Income = Income[sam], Expenditure = Expenditure[sam])
-#' E.PPS(y, pk)
+#' # The selection probability of each unit is proportional to the variable Income
+#' m <- 400
+#' res<-S.PPS(400,Income)
+#' # The selected sample
+#' sam <- res[,1]
+#' # The information about the units in the sample is stored in an object called data
+#' data <- Lucy[sam,]
+#' data
+#' dim(data)
 
 S.PPS <- function(m, x) {
   N     <- length(x)

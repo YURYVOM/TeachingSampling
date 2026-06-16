@@ -34,17 +34,32 @@
 #'   \code{\link{PikSTPPS}}
 #'
 #' @examples
-#' data('Lucy')
-#' attach(Lucy)
-#' N  <- nrow(Lucy)
-#' n1 <- 70; n2 <- 100; n3 <- 200
-#' nh <- c(n1, n2, n3)
-#' res <- S.STpiPS(Level, Employees, nh)
-#' head(res)
+#' ############
+#' ## Example 1
+#' ############
+#' U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+#' x <- c(52, 60, 75, 100, 50)
+#' Strata <- c("A", "A", "A", "B", "B")
+#' nh <- c(2, 2)
+#' res <- S.STpiPS(Strata, x, nh)
 #' sam <- res[, 1]
-#' Pik <- res[, 2]
-#' y   <- data.frame(Income = Income[sam], Expenditure = Expenditure[sam])
-#' E.STpiPS(y, Pik, Level[sam])
+#' U[sam]
+#' pik <- res[, 2]
+#' pik
+#' ############
+#' ## Example 2
+#' ############
+#' data(Lucy)
+#' attach(Lucy)
+#' N1 <- summary(Level)[[1]]
+#' N2 <- summary(Level)[[2]]
+#' N3 <- summary(Level)[[3]]
+#' nh <- c(70, 100, 200)
+#' res <- S.STpiPS(Level, Employees, nh)
+#' sam <- res[, 1]
+#' data <- Lucy[sam, ]
+#' dim(data)
+#' pik <- res[, 2]
 
 S.STpiPS <- function(S, x, nh) {
   S   <- as.factor(S)

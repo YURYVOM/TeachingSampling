@@ -32,13 +32,17 @@ from \code{N} units is \eqn{N^m}. This grows rapidly and the function
 should only be used for small \code{N} and \code{m}.
 }
 \examples{
-# All ordered sequences of 2 draws from N = 3 units
-OrderWR(N = 3, m = 2)
-# N^m = 9 rows
-
-# With population labels
-U <- c("A", "B", "C")
-OrderWR(N = 3, m = 2, ID = U)
+U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+N <- length(U)
+# Five possible ordered samples of size m=1
+OrderWR(N, 1)
+OrderWR(N, 1, ID = U)
+# 25 possible ordered samples of size m=2
+OrderWR(N, 2)
+OrderWR(N, 2, ID = U)
+# Note: ordered samples differ from unordered (SupportWR)
+OrderWR(N, 2)
+SupportWR(N, 2)
 }
 \references{
 Sarndal, C-E. and Swensson, B. and Wretman, J. (1992),

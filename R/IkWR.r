@@ -29,12 +29,11 @@
 #' @seealso \code{\link{Ik}}, \code{\link{SupportWR}}, \code{\link{nk}}
 #'
 #' @examples
-#' # With-replacement support: N = 3 units, m = 2 draws
-#' N <- 3
+#' U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+#' N <- length(U)
 #' m <- 2
+#' # The sample membership matrix for with-replacement sampling
 #' IkWR(N, m)
-#' # Number of rows = choose(N + m - 1, m) = choose(4, 2) = 6
-#' nrow(IkWR(N, m)) == choose(N + m - 1, m)
 
 IkWR <- function(N, m) {
   Q <- SupportWR(N, m, ID = FALSE)

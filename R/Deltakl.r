@@ -33,11 +33,13 @@
 #' @seealso \code{\link{Pik}}, \code{\link{Pikl}}, \code{\link{VarHT}}
 #'
 #' @examples
-#' N <- 5
+#' U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+#' N <- length(U)
 #' n <- 2
 #' p <- c(0.13, 0.2, 0.15, 0.1, 0.15, 0.04, 0.02, 0.06, 0.07, 0.08)
-#' Delta <- Deltakl(N, n, p)
-#' Delta
+#' sum(p)
+#' # Variance-Covariance matrix of the sample membership indicators
+#' Deltakl(N, n, p)
 
 Deltakl <- function(N, n, p) {
   Ind   <- Ik(N, n)

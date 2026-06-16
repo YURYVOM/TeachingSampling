@@ -26,23 +26,33 @@ Binomial(\code{N}, \code{prob}) distribution. To extract the selected
 indices, use \code{sam[sam != 0]}.
 }
 \examples{
-# Population of size N = 100, inclusion probability 10\%
-N    <- 100
-prob <- 0.1
-sam  <- S.BE(N, prob)
+############
+## Example 1
+############
+# Vector U contains the label of a population of size N=5
+U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+# Draws a Bernoulli sample without replacement of expected size n=3
+# The inlusion probability is 0.6 for each unit in the population
+sam <- S.BE(5,0.6)
+sam
+# The selected sample is
+U[sam]
 
-# Extract selected indices
-selected <- sam[sam != 0]
-length(selected)  # random, around 10
+############
+## Example 2
+############
+# Uses the Lucy data to draw a Bernoulli sample
 
-# Using Lucy data
-data('Lucy')
-N    <- nrow(Lucy)
-prob <- 0.05
-sam  <- S.BE(N, prob)
-sam  <- sam[sam != 0]
-y    <- data.frame(Income = Lucy$Income[sam])
-E.BE(y, prob)
+data(Lucy)
+attach(Lucy)
+N <- dim(Lucy)[1]
+# The population size is 2396. If the expected sample size is 400
+# then, the inclusion probability must be 400/2396=0.1669
+sam <- S.BE(N,0.01669)
+# The information about the units in the sample is stored in an object called data
+data <- Lucy[sam,]
+data
+dim(data)
 }
 \references{
 Sarndal, C-E. and Swensson, B. and Wretman, J. (1992),

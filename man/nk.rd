@@ -28,9 +28,10 @@ this function records how many times each unit was selected. This is needed
 for with-replacement estimators based on selection frequencies.
 }
 \examples{
-# Frequency matrix: N = 3 units, m = 2 draws
-N <- 3
+U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+N <- length(U)
 m <- 2
+# Frequency matrix for with-replacement sampling
 nk(N, m)
 }
 \references{

@@ -31,9 +31,14 @@ generate all non-decreasing sequences of length \code{m} from
 \eqn{\{1, \ldots, N\}}.
 }
 \examples{
-# All unordered outcomes: N = 3, m = 2
-SupportWR(N = 3, m = 2)
-# choose(3+2-1, 2) = choose(4,2) = 6 rows
+U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+N <- length(U)
+m <- 2
+# With-replacement support
+SupportWR(N, m)
+SupportWR(N, m, ID = U)
+y <- c(32, 34, 46, 89, 35)
+SupportWR(N, m, ID = y)
 }
 \references{
 Sarndal, C-E. and Swensson, B. and Wretman, J. (1992),

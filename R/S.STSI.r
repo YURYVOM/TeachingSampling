@@ -31,14 +31,29 @@
 #' @seealso \code{\link{E.STSI}}, \code{\link{S.SI}}, \code{\link{S.STpiPS}}
 #'
 #' @examples
-#' data('Lucy')
+#' ############
+#' ## Example 1
+#' ############
+#' U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+#' Strata <- c("A", "A", "A", "B", "B")
+#' Nh <- c(3, 2)
+#' nh <- c(2, 1)
+#' sam <- S.STSI(Strata, Nh, nh)
+#' sam
+#' U[sam]
+#' ############
+#' ## Example 2
+#' ############
+#' data(Lucy)
 #' attach(Lucy)
-#' N  <- nrow(Lucy)
-#' Nh <- as.numeric(table(Level))
+#' N1 <- summary(Level)[[1]]
+#' N2 <- summary(Level)[[2]]
+#' N3 <- summary(Level)[[3]]
+#' Nh <- c(N1, N2, N3)
 #' nh <- c(70, 100, 200)
 #' sam <- S.STSI(Level, Nh, nh)
-#' y   <- data.frame(Income = Income[sam], Expenditure = Expenditure[sam])
-#' E.STSI(Level[sam], Nh, nh, y)
+#' data <- Lucy[sam, ]
+#' dim(data)
 
 S.STSI <- function(S, Nh, nh) {
   S   <- as.factor(S)

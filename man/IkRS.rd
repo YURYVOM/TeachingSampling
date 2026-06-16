@@ -26,10 +26,11 @@ populations only (\code{N <= 10}) due to the exponential growth of the
 support size.
 }
 \examples{
-# Full indicator matrix for N = 3
-IkRS(3)
-# Number of rows: 1 (empty) + 3 + 3 + 1 = 8 = 2^3
-nrow(IkRS(3))
+U <- c("Yves", "Ken", "Erik", "Sharon", "Leslie")
+N <- length(U)
+# The sample membership matrix for all sample sizes
+IkRS(N)
+# The first sample is a null one and the last sample is a census
 }
 \references{
 Sarndal, C-E. and Swensson, B. and Wretman, J. (1992),
