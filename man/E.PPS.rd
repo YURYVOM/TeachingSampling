@@ -2,7 +2,7 @@
 % Please edit documentation in R/E.PPS.r
 \name{E.PPS}
 \alias{E.PPS}
-\title{Estimation of the Population Total under PPS With-Replacement Sampling}
+\title{Estimation of the Population Total under Probability-Proportional-to-Size Sampling With Replacement}
 \usage{
 E.PPS(y, pk)
 }
@@ -37,7 +37,7 @@ m   <- 400
 res <- S.PPS(m, Employees)
 sam <- res[, 1]
 pk  <- res[, 2]
-y   <- data.frame(Income = Income[sam], Expenditure = Expenditure[sam])
+y   <- data.frame(Income = Income[sam], Taxes = Taxes[sam])
 E.PPS(y, pk)
 }
 \references{

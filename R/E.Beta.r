@@ -1,7 +1,7 @@
 #' @export
 #'
 #' @title
-#' Estimation of Regression Coefficients under Simple Random Sampling
+#' Estimation of Regression Coefficients under Simple Random Sampling Without Replacement
 #' @description
 #' Computes the weighted least squares estimator of regression coefficients
 #' for a finite population under simple random sampling without replacement.

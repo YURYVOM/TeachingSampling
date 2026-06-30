@@ -2,7 +2,7 @@
 % Please edit documentation in R/E.Beta.r
 \name{E.Beta}
 \alias{E.Beta}
-\title{Estimation of Regression Coefficients under Simple Random Sampling}
+\title{Estimation of Regression Coefficients under Simple Random Sampling Without Replacement}
 \usage{
 E.Beta(N, n, y, x, ck = 1, b0 = FALSE)
 }

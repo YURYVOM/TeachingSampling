@@ -1,7 +1,7 @@
 #' @export
 #'
 #' @title
-#' Matrix of Joint Inclusion Probability Differences
+#' Variance-Covariance Matrix of the Sample Membership Indicators for Fixed Size Without Replacement Sampling Designs
 #' @description
 #' Computes the matrix \eqn{\Delta_{kl} = \pi_{kl} - \pi_k \pi_l} for all
 #' pairs of units in a finite population. This matrix appears in the exact

@@ -2,7 +2,7 @@
 % Please edit documentation in R/E.PO.r
 \name{E.PO}
 \alias{E.PO}
-\title{Estimation of the Population Total under Poisson Sampling}
+\title{Estimation of the Population Total under Poisson Sampling Without Replacement}
 \usage{
 E.PO(y, Pik)
 }
@@ -40,7 +40,7 @@ n <- 400
 Pik <- PikPPS(n, Employees)
 sam <- S.PO(N, Pik)
 sam <- sam[sam != 0]
-y   <- data.frame(Income = Income[sam], Expenditure = Expenditure[sam])
+y   <- data.frame(Income = Income[sam], Taxes = Taxes[sam])
 E.PO(y, Pik[sam])
 }
 \references{

@@ -1,7 +1,7 @@
 #' @export
 #'
 #' @title
-#' Frequency Indicator Matrix for With-Replacement Sampling
+#' Sample Membership Indicator for with Replacements sampling designs
 #' @description
 #' Constructs the indicator matrix of the with-replacement sampling support
 #' for a population of size \code{N} and \code{m} draws. Each row corresponds

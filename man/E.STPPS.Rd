@@ -2,7 +2,7 @@
 % Please edit documentation in R/E.STPPS.r
 \name{E.STPPS}
 \alias{E.STPPS}
-\title{Estimation of the Population Total under Stratified PPS With-Replacement Sampling}
+\title{Estimation of the Population Total under Stratified Probability Proportional to Size Sampling With Replacement}
 \usage{
 E.STPPS(y, pk, mh, S)
 }

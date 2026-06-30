@@ -1,8 +1,7 @@
 #' @export
 #'
 #' @title
-#' Estimation of the Population Total under Pi Probability Proportional to
-#' Size Sampling
+#' Estimation of the Population Total under Probability-Proportional-to-Size Sampling Without Replacement
 #' @description
 #' Computes the Horvitz-Thompson estimator of the population total under a
 #' without-replacement probability proportional to size (piPS) sampling design.
@@ -42,7 +41,7 @@
 #' res <- S.piPS(n, x)
 #' sam <- res[, 1]
 #' Pik <- res[, 2]
-#' y   <- data.frame(Income = Income[sam], Expenditure = Expenditure[sam])
+#' y   <- data.frame(Income = Income[sam], Taxes = Taxes[sam])
 #' E.piPS(y, Pik)
 
 E.piPS <- function(y, Pik) {

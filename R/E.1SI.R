@@ -7,21 +7,25 @@
 #' Estimation of the Population Total under Single Stage Simple Random Sampling Without Replacement
 #' @description 
 #' This function computes the Horvitz-Thompson estimator of the population total according to a single stage sampling design.
-#' @return 
-#' This function returns the estimation of the population total of 
-#' every single variable of interest, its estimated standard error 
-#' and its estimated coefficient of variation.
+#' @return
+#' A matrix with four rows and one column per variable of interest:
+#' \itemize{
+#'   \item \code{Estimation}: Estimated population total.
+#'   \item \code{Standard Error}: Estimated standard error of the total.
+#'   \item \code{CVE}: Estimated coefficient of variation (in percentage).
+#'   \item \code{DEFF}: Design effect with respect to simple random sampling.
+#' }
 #' @details
-#' The function returns a data matrix whose columns correspond to 
-#' the estimated parameters of the variables of interest.
-#' @author Hugo Andres Gutierrez Rojas <hugogutierrez at gmail.com>
-#' @param NI Population size of Primary Sampling Units.
-#' @param nI Sample size of Primary Sampling Units.
-#' @param y Vector, matrix or data frame containig the recollected 
-#' information of the variables of interest for every unit in the 
-#' selected sample.
-#' @param PSU Vector identifying the membership to the strata of 
-#' each unit in the population.
+#' The estimator aggregates unit values within each selected PSU into cluster
+#' totals, then applies the expansion estimator across PSUs. The variance is
+#' estimated from the variability of the cluster totals under a simple random
+#' sampling framework at the PSU level.
+#' @author Hugo Andres Gutierrez Rojas <hagutierrezro at gmail.com>
+#' @param NI Population size of Primary Sampling Units (PSUs).
+#' @param nI Sample size of Primary Sampling Units (PSUs).
+#' @param y Vector, matrix or data frame containing the values of the
+#'   variables of interest for every unit in the selected sample.
+#' @param PSU Vector identifying the PSU membership of each unit in the sample.
 #' 
 #' @references 
 #' Sarndal, C-E. and Swensson, B. and Wretman, J. (1992), \emph{Model Assisted Survey Sampling}. Springer.\cr

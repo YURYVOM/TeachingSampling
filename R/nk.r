@@ -1,7 +1,7 @@
 #' @export
 #'
 #' @title
-#' Frequency Matrix for With-Replacement Sampling
+#' Sample Selection Indicator for With Replacement Sampling Designs
 #' @description
 #' Constructs the frequency matrix of the with-replacement sampling support
 #' for a population of size \code{N} and \code{m} draws. Each row corresponds

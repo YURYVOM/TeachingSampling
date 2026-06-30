@@ -2,7 +2,7 @@
 % Please edit documentation in R/IkWR.r
 \name{IkWR}
 \alias{IkWR}
-\title{Frequency Indicator Matrix for With-Replacement Sampling}
+\title{Sample Membership Indicator for with Replacements sampling designs}
 \usage{
 IkWR(N, m)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/nk.r
 \name{nk}
 \alias{nk}
-\title{Frequency Matrix for With-Replacement Sampling}
+\title{Sample Selection Indicator for With Replacement Sampling Designs}
 \usage{
 nk(N, m)
 }

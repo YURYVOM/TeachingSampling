@@ -2,7 +2,7 @@
 % Please edit documentation in R/Deltakl.r
 \name{Deltakl}
 \alias{Deltakl}
-\title{Matrix of Joint Inclusion Probability Differences}
+\title{Variance-Covariance Matrix of the Sample Membership Indicators for Fixed Size Without Replacement Sampling Designs}
 \usage{
 Deltakl(N, n, p)
 }

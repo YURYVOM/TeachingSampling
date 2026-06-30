@@ -1,7 +1,7 @@
 #' @export
 #'
 #' @title
-#' Estimation of the Population Total under Bernoulli Sampling
+#' Estimation of the Population Total under Bernoulli Sampling Without Replacement
 #' @description
 #' Computes the Horvitz-Thompson estimator of the population total under a
 #' Bernoulli sampling design, where each unit in the population is independently

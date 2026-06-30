@@ -1,7 +1,7 @@
 #' @export
 #'
 #' @title
-#' Estimation of Population Quantiles
+#' Estimation of a Population Quantile
 #' @description
 #' Computes a weighted quantile estimator for finite populations. When
 #' inclusion probabilities are provided, the estimator uses the

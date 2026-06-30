@@ -1,7 +1,7 @@
 #' @export
 #'
 #' @title
-#' Estimation of the Population Total under Poisson Sampling
+#' Estimation of the Population Total under Poisson Sampling Without Replacement
 #' @description
 #' Computes the Horvitz-Thompson estimator of the population total under a
 #' Poisson sampling design, where each unit is independently selected with
@@ -40,7 +40,7 @@
 #' Pik <- PikPPS(n, Employees)
 #' sam <- S.PO(N, Pik)
 #' sam <- sam[sam != 0]
-#' y   <- data.frame(Income = Income[sam], Expenditure = Expenditure[sam])
+#' y   <- data.frame(Income = Income[sam], Taxes = Taxes[sam])
 #' E.PO(y, Pik[sam])
 
 E.PO <- function(y, Pik) {

@@ -1,7 +1,7 @@
 #' @export
 #'
 #' @title
-#' Estimation of the Population Total under Two Stage Simple Random Sampling
+#' Estimation of the Population Total under Two Stage Simple Random Sampling Without Replacement
 #' @description
 #' Computes the Horvitz-Thompson estimator of the population total under a
 #' two-stage simple random sampling without replacement design, where both

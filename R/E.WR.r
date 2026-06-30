@@ -38,7 +38,7 @@
 #' N   <- nrow(Lucy)
 #' m   <- 400
 #' sam <- S.WR(N, m)
-#' y   <- data.frame(Income = Income[sam], Expenditure = Expenditure[sam])
+#' y   <- data.frame(Income = Income[sam], Taxes = Taxes[sam])
 #' E.WR(N, m, y)
 
 E.WR <- function(N, m, y) {

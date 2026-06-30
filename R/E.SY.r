@@ -1,7 +1,7 @@
 #' @export
 #'
 #' @title
-#' Estimation of the Population Total under Systematic Sampling
+#' Estimation of the Population Total under Systematic Sampling Without Replacement
 #' @description
 #' Computes the Horvitz-Thompson estimator of the population total under a
 #' systematic sampling design with sampling interval \code{a}.
@@ -39,7 +39,7 @@
 #' N   <- nrow(Lucy)
 #' a   <- 10
 #' sam <- S.SY(N, a)
-#' y   <- data.frame(Income = Income[sam], Expenditure = Expenditure[sam])
+#' y   <- data.frame(Income = Income[sam], Taxes = Taxes[sam])
 #' E.SY(N, a, y)
 
 E.SY <- function(N, a, y) {

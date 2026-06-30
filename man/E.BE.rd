@@ -2,7 +2,7 @@
 % Please edit documentation in R/E.BE.r
 \name{E.BE}
 \alias{E.BE}
-\title{Estimation of the Population Total under Bernoulli Sampling}
+\title{Estimation of the Population Total under Bernoulli Sampling Without Replacement}
 \usage{
 E.BE(y, prob)
 }

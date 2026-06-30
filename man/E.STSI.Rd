@@ -2,7 +2,7 @@
 % Please edit documentation in R/E.STSI.r
 \name{E.STSI}
 \alias{E.STSI}
-\title{Estimation of the Population Total under Stratified Simple Random Sampling}
+\title{Estimation of the Population Total under Stratified Simple Random Sampling Without Replacement}
 \usage{
 E.STSI(S, Nh, nh, y)
 }

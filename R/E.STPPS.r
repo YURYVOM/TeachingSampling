@@ -1,7 +1,7 @@
 #' @export
 #'
 #' @title
-#' Estimation of the Population Total under Stratified PPS With-Replacement Sampling
+#' Estimation of the Population Total under Stratified Probability Proportional to Size Sampling With Replacement
 #' @description
 #' Computes the Hansen-Hurwitz estimator of the population total under a
 #' stratified PPS with-replacement (STPPS) sampling design.

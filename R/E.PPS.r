@@ -1,7 +1,7 @@
 #' @export
 #'
 #' @title
-#' Estimation of the Population Total under PPS With-Replacement Sampling
+#' Estimation of the Population Total under Probability-Proportional-to-Size Sampling With Replacement
 #' @description
 #' Computes the Hansen-Hurwitz estimator of the population total under a
 #' probability proportional to size with-replacement (PPS-WR) sampling design.
@@ -37,7 +37,7 @@
 #' res <- S.PPS(m, Employees)
 #' sam <- res[, 1]
 #' pk  <- res[, 2]
-#' y   <- data.frame(Income = Income[sam], Expenditure = Expenditure[sam])
+#' y   <- data.frame(Income = Income[sam], Taxes = Taxes[sam])
 #' E.PPS(y, pk)
 
 E.PPS <- function(y, pk) {

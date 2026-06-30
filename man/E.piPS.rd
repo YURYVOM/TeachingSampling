@@ -2,8 +2,7 @@
 % Please edit documentation in R/E.piPS.r
 \name{E.piPS}
 \alias{E.piPS}
-\title{Estimation of the Population Total under Pi Probability Proportional to
-Size Sampling}
+\title{Estimation of the Population Total under Probability-Proportional-to-Size Sampling Without Replacement}
 \usage{
 E.piPS(y, Pik)
 }
@@ -42,7 +41,7 @@ x <- Employees
 res <- S.piPS(n, x)
 sam <- res[, 1]
 Pik <- res[, 2]
-y   <- data.frame(Income = Income[sam], Expenditure = Expenditure[sam])
+y   <- data.frame(Income = Income[sam], Taxes = Taxes[sam])
 E.piPS(y, Pik)
 }
 \references{

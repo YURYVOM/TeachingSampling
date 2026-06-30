@@ -2,7 +2,7 @@
 % Please edit documentation in R/E.STpiPS.R
 \name{E.STpiPS}
 \alias{E.STpiPS}
-\title{Estimation of the Population Total under Stratified piPS Sampling}
+\title{Estimation of the Population Total under Stratified Probability Proportional to Size Sampling Without Replacement}
 \usage{
 E.STpiPS(y, Pik, S)
 }

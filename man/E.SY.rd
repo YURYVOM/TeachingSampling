@@ -2,7 +2,7 @@
 % Please edit documentation in R/E.SY.r
 \name{E.SY}
 \alias{E.SY}
-\title{Estimation of the Population Total under Systematic Sampling}
+\title{Estimation of the Population Total under Systematic Sampling Without Replacement}
 \usage{
 E.SY(N, a, y)
 }
@@ -40,7 +40,7 @@ attach(Lucy)
 N   <- nrow(Lucy)
 a   <- 10
 sam <- S.SY(N, a)
-y   <- data.frame(Income = Income[sam], Expenditure = Expenditure[sam])
+y   <- data.frame(Income = Income[sam], Taxes = Taxes[sam])
 E.SY(N, a, y)
 }
 \references{

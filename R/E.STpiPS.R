@@ -1,7 +1,7 @@
 #' @export
 #'
 #' @title
-#' Estimation of the Population Total under Stratified piPS Sampling
+#' Estimation of the Population Total under Stratified Probability Proportional to Size Sampling Without Replacement
 #' @description
 #' Computes the Horvitz-Thompson estimator of the population total under a
 #' stratified without-replacement probability proportional to size (piPS)

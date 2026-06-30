@@ -2,7 +2,7 @@
 % Please edit documentation in R/E.Quantile.r
 \name{E.Quantile}
 \alias{E.Quantile}
-\title{Estimation of Population Quantiles}
+\title{Estimation of a Population Quantile}
 \usage{
 E.Quantile(y, Qn, Pik)
 }

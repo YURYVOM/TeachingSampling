@@ -2,7 +2,7 @@
 % Please edit documentation in R/E.2SI.r
 \name{E.2SI}
 \alias{E.2SI}
-\title{Estimation of the Population Total under Two Stage Simple Random Sampling}
+\title{Estimation of the Population Total under Two Stage Simple Random Sampling Without Replacement}
 \usage{
 E.2SI(NI, nI, Ni, ni, y, PSU)
 }

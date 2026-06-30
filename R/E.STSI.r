@@ -1,7 +1,7 @@
 #' @export
 #'
 #' @title
-#' Estimation of the Population Total under Stratified Simple Random Sampling
+#' Estimation of the Population Total under Stratified Simple Random Sampling Without Replacement
 #' @description
 #' Computes the Horvitz-Thompson estimator of the population total under a
 #' stratified simple random sampling without replacement (STSI) design.
