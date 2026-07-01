@@ -1,6 +1,7 @@
-# TeachingSampling
+# TeachingSampling <img src="Teachingsamplinglogo.png" align="right" height="139" alt="TeachingSampling logo" />
 
 ### An R package that draws complex samples and estimates complex parameters
+
 
 `TeachingSampling` allows you to select samples from the most common probabilistic sampling designs and estimate complex parameters such as totals, means, ratios, regression coefficients, and quantiles.
 
@@ -135,8 +136,8 @@ sam <- S.SI(N, n)
 sam <- sam[sam != 0]
 
 # Estimate population totals
-y <- data.frame(Income      = Lucy$Income[sam],
-                Expenditure = Lucy$Expenditure[sam])
+y <- data.frame(Income  = Lucy$Income[sam],
+                Taxes    = Lucy$Taxes[sam])
 
 E.SI(N, n, y)
 ```
