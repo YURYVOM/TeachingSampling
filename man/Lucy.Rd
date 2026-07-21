@@ -11,7 +11,7 @@ A data frame with 2,396 rows and 8 variables:
     alphanumeric sequence (two letters and ten digits).}
   \item{Ubication}{The address of the principal office of the company.}
   \item{Level}{The size level of the company discriminated according to
-    the taxes declared. There are small, medium and big companies.}
+    the income declared. There are small, medium and big companies.}
   \item{Zone}{The country is divided by counties. A company belongs to a
     particular zone according to its cartographic location.}
   \item{Income}{The total amount of a company's earnings in the previous
